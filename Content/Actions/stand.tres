@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://ddb2ss5yt8gk6"]
+
+[ext_resource type="Texture2D" uid="uid://bftthtjlu1i5u" path="res://Content/Sprites/Character/Placeholder/Stand.png" id="1_hxbdd"]
+[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="1_ylywb"]
+
+[resource]
+script = ExtResource("1_ylywb")
+ActionName = "Stand"
+AnimationSprite = ExtResource("1_hxbdd")
+metadata/_custom_type_script = "uid://c0np48somnu43"

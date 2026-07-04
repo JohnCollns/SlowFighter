@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://dw2eeaqp85nmp"]
+
+[ext_resource type="Texture2D" uid="uid://c6cbwlpihd2hk" path="res://Content/Sprites/Character/Placeholder/BlockLow.png" id="1_lsxys"]
+[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="1_n8jq0"]
+
+[resource]
+script = ExtResource("1_n8jq0")
+ActionName = "Block Low"
+AnimationSprite = ExtResource("1_lsxys")
+ActionCounters = PackedStringArray("Low Kick", "Jab")
+metadata/_custom_type_script = "uid://c0np48somnu43"

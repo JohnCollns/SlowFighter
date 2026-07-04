@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b80lxfc3q0c4q"]
+
+[ext_resource type="Script" uid="uid://cl6rk8d7h4swf" path="res://src/Character.cs" id="1_3xdt2"]
+[ext_resource type="Texture2D" uid="uid://bftthtjlu1i5u" path="res://Content/Sprites/Character/Placeholder/Stand.png" id="2_3xdt2"]
+
+[node name="Character" type="Node2D" unique_id=1292187384]
+script = ExtResource("1_3xdt2")
+
+[node name="SpriteNode" type="Sprite2D" parent="." unique_id=790732550]
+position = Vector2(90, 0)
+texture = ExtResource("2_3xdt2")
+
+[node name="HealthLabel" type="Label" parent="." unique_id=101987714]
+offset_left = -54.0
+offset_top = -110.0
+offset_right = -14.0
+offset_bottom = -87.0
+text = "100"
+
+[node name="ActionLabel" type="Label" parent="." unique_id=1140931769]
+offset_left = -53.0
+offset_top = -88.0
+offset_right = -13.0
+offset_bottom = -65.0
+text = "Action"

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btyjd63om77d2"]
+
+[ext_resource type="Texture2D" uid="uid://bbu67i0318nc7" path="res://Content/Sprites/beach1.png" id="1_15hm4"]
+[ext_resource type="PackedScene" uid="uid://b80lxfc3q0c4q" path="res://Content/Scenes/Character.tscn" id="2_5otmd"]
+[ext_resource type="PackedScene" uid="uid://ugbj7lxbaprj" path="res://Content/Scenes/GameManagerScene.tscn" id="3_8gour"]
+
+[node name="DemoScene" type="Node2D" unique_id=766255491]
+
+[node name="Beach1" type="Sprite2D" parent="." unique_id=913500139]
+texture = ExtResource("1_15hm4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1234944983]
+zoom = Vector2(4, 4)
+
+[node name="GameManagerScene" parent="." unique_id=2030989314 node_paths=PackedStringArray("Player0", "Player1") instance=ExtResource("3_8gour")]
+position = Vector2(0, -115.615)
+Player0 = NodePath("../Character0")
+Player1 = NodePath("../Character1")
+
+[node name="Character0" parent="." unique_id=1292187384 instance=ExtResource("2_5otmd")]
+position = Vector2(-141, 2)
+
+[node name="Character1" parent="." unique_id=1408363922 instance=ExtResource("2_5otmd")]
+position = Vector2(128, 2)
+bFacingLeft = false

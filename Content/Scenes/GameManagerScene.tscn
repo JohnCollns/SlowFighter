@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ugbj7lxbaprj"]
+
+[ext_resource type="Script" uid="uid://bainmi0g4bumn" path="res://src/GameManager.cs" id="1_ifhs8"]
+[ext_resource type="Resource" uid="uid://ddb2ss5yt8gk6" path="res://Content/Actions/stand.tres" id="2_3nila"]
+[ext_resource type="Script" uid="uid://ce8ibmos1d02p" path="res://src/InputListener.cs" id="2_i52vu"]
+[ext_resource type="Resource" uid="uid://dfx6okisp3oh5" path="res://Content/Actions/punch_jab.tres" id="3_reane"]
+[ext_resource type="Resource" uid="uid://ckl4qi0mpefvu" path="res://Content/Actions/grab.tres" id="4_3nila"]
+[ext_resource type="Resource" uid="uid://brnt2wpry3u6y" path="res://Content/Actions/low_kick.tres" id="5_rhbhk"]
+[ext_resource type="Resource" uid="uid://dn288104dnw46" path="res://Content/Actions/punch_overhead.tres" id="6_irp3t"]
+[ext_resource type="Resource" uid="uid://dw2eeaqp85nmp" path="res://Content/Actions/block_low.tres" id="7_abu86"]
+[ext_resource type="Resource" uid="uid://c0d3cgkx6hdcw" path="res://Content/Actions/block_high.tres" id="8_shh8e"]
+[ext_resource type="Script" uid="uid://ox2hgge2dr4k" path="res://src/InputTimer.cs" id="9_reane"]
+
+[node name="GameManagerScene" type="Node2D" unique_id=2030989314]
+script = ExtResource("1_ifhs8")
+InputDuration = 1.0
+ExecutionDuration = 0.5
+DefaultAction = ExtResource("2_3nila")
+
+[node name="InputListener" type="Node" parent="." unique_id=1061998948]
+script = ExtResource("2_i52vu")
+ActionMap = Dictionary[String, Object]({
+"block_high": ExtResource("8_shh8e"),
+"block_low": ExtResource("7_abu86"),
+"grab": ExtResource("4_3nila"),
+"jab": ExtResource("3_reane"),
+"low_kick": ExtResource("5_rhbhk"),
+"overhead": ExtResource("6_irp3t")
+})
+
+[node name="InputTimer" type="Node2D" parent="." unique_id=670739781]
+script = ExtResource("9_reane")
+FullWidthLiteral = 40.0
+FullWidthScale = 10.0
+Height = 15.0
+FullColour = Color(0, 1, 0, 1)
+EmptyColour = Color(1, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="InputTimer" unique_id=1767230847]
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 0)
