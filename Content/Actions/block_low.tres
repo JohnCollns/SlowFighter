@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://dw2eeaqp85nmp"]
+[gd_resource type="Resource" format=3 uid="uid://dw2eeaqp85nmp"]
 
 [ext_resource type="Texture2D" uid="uid://c6cbwlpihd2hk" path="res://Content/Sprites/Character/Placeholder/BlockLow.png" id="1_lsxys"]
-[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="1_n8jq0"]
+[ext_resource type="Script" uid="uid://x5j0krf3nvx4" path="res://src/Actions/ActionBlock.cs" id="2_lsxys"]
 
 [resource]
-script = ExtResource("1_n8jq0")
+script = ExtResource("2_lsxys")
+HealOnSuccess = 10.0
 ActionName = "Block Low"
 AnimationSprite = ExtResource("1_lsxys")
 ActionCounters = PackedStringArray("Low Kick", "Jab")

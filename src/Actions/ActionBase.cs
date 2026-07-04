@@ -42,5 +42,5 @@ public partial class ActionBase : Resource
     }
 
     // Not yet in use!
-    public void OnActionSucceeded(Character ownerCharacter, Character targetCharacter) { }
+    public virtual void OnActionSucceeded(Character ownerCharacter, Character targetCharacter) { }
 }

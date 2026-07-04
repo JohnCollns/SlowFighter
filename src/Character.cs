@@ -47,6 +47,14 @@ public partial class Character : Node2D
         //GD.Print("Damage taken, resultant health: " + Health);
     }
 
+    public void Heal(float amount)
+    {
+        Health += amount;
+        if  (Health > MaxHealth)
+            Health = MaxHealth;
+        UpdateHealthLabel();
+    }
+
     public void AnimateAction(ActionBase action)
     {
         SpriteNode.Texture = action.AnimationSprite;

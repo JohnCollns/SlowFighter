@@ -93,6 +93,7 @@ public partial class GameManager : Node
         {
             // p0 executes, p1 fails
             Player1.TakeDamage(player0Action.DamageOnCounter);
+            player0Action.OnActionSucceeded(Player0, Player1);
             actionResolved = true;
             GD.Print($"  p0: {player0Action.ActionName} counters p1: {player1Action.ActionName}, dealing {player0Action.DamageOnCounter} damage");
         }
@@ -100,8 +101,9 @@ public partial class GameManager : Node
         {
             // p1 executes, p0 fails
             Player0.TakeDamage(player1Action.DamageOnCounter);
+            player0Action.OnActionSucceeded(Player1, Player0);
             actionResolved = true;
-            GD.Print($"  p0: {player1Action.ActionName} counters p1: {player0Action.ActionName}, dealing {player1Action.DamageOnCounter} damage");
+            GD.Print($"  p1: {player1Action.ActionName} counters p0: {player0Action.ActionName}, dealing {player1Action.DamageOnCounter} damage");
         }
 
         if (!actionResolved)
