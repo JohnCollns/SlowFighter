@@ -19,8 +19,12 @@ public partial class GameManager : Node
     [Export] public float ExecutionDuration;
     [Export] public ActionBase DefaultAction;
     
+    [Export] public bool MusicEnabled = true;
+    [Export] public AudioStream MusicTrack;
+    
     private InputListener inputListener;
     private InputTimer inputTimer;
+    private AudioStreamPlayer audioStreamPlayer;
     
     private GamePhase gamePhase;
     private double phaseTimeRemaining;
@@ -32,6 +36,7 @@ public partial class GameManager : Node
         gamePhase = GamePhase.Pregame;
         inputListener = GetNode<InputListener>("InputListener");
         inputTimer = GetNode<InputTimer>("InputTimer");
+        audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
     }
 
     public override void _Process(double delta)
@@ -138,7 +143,17 @@ public partial class GameManager : Node
     {
         Player0.Restart();
         Player1.Restart();
+        StartMusic();
         StartInputPhase();
+    }
+
+    private void StartMusic()
+    {
+        if (MusicEnabled && !audioStreamPlayer.IsPlaying())
+        {
+            audioStreamPlayer.SetStream(MusicTrack);
+            audioStreamPlayer.Play();
+        }
     }
 
     public Character GetPlayer(int index)

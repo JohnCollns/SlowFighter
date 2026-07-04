@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://ddb2ss5yt8gk6" path="res://Content/Actions/stand.tres" id="2_3nila"]
 [ext_resource type="Script" uid="uid://ce8ibmos1d02p" path="res://src/InputListener.cs" id="2_i52vu"]
 [ext_resource type="Resource" uid="uid://dfx6okisp3oh5" path="res://Content/Actions/punch_jab.tres" id="3_reane"]
+[ext_resource type="AudioStream" uid="uid://cky6i1au61dth" path="res://Content/GuileThemeSlowed60pc.mp3" id="3_rhbhk"]
 [ext_resource type="Resource" uid="uid://ckl4qi0mpefvu" path="res://Content/Actions/grab.tres" id="4_3nila"]
 [ext_resource type="Resource" uid="uid://brnt2wpry3u6y" path="res://Content/Actions/low_kick.tres" id="5_rhbhk"]
 [ext_resource type="Resource" uid="uid://dn288104dnw46" path="res://Content/Actions/punch_overhead.tres" id="6_irp3t"]
@@ -16,6 +17,7 @@ script = ExtResource("1_ifhs8")
 InputDuration = 1.0
 ExecutionDuration = 0.5
 DefaultAction = ExtResource("2_3nila")
+MusicTrack = ExtResource("3_rhbhk")
 
 [node name="InputListener" type="Node" parent="." unique_id=1061998948]
 script = ExtResource("2_i52vu")
@@ -41,3 +43,5 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 40.0
 pivot_offset = Vector2(20, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1522349306]
