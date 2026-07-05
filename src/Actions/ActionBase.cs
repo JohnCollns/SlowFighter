@@ -35,6 +35,11 @@ public partial class ActionBase : Resource
     [Export] public float DamageOnCounter { get; protected set; }
     [Export] public float DamageOnClash { get; protected set; }
 
+    public bool IsAttack()
+    {
+        return ActionType == ActionBaseType.MinorAttack || ActionType == ActionBaseType.MajorAttack;
+    }
+
     public bool CountersAction(ActionBase otherAction)
     {
         if (ActionCounters == null) return false;
@@ -46,7 +51,6 @@ public partial class ActionBase : Resource
             }
         }
         return false;
-        //return ActionCounters.Contains(otherAction.ActionName);
     }
 
     public virtual void OnActionSucceeded(Character ownerCharacter, Character targetCharacter) { }
@@ -56,4 +60,6 @@ public partial class ActionBase : Resource
         GD.Print($"P{ownerCharacter.GetID()} Animating: {ActionName}");
         ownerCharacter.SpriteNode.Texture = AnimationSprite;
     }
+    
+    public virtual void OnAnimationFinished(Character ownerCharacter) { }
 }

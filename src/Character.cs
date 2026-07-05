@@ -12,11 +12,13 @@ public partial class Character : Node2D
     public Sprite2D SpriteNode { get; private set; }
     public Sprite2D ForegroundSpriteNode { get; private set; }
     [Export] public Texture2D HurtSprite;
+    [Export] public ActionBase StandardAction;
     private Label HealthLabel;
     //private ColorRect HealthBar;
     private HealthBar HealthBar;
 
     public ActionBase pendingAction;
+    private ActionBase performingAction;
 
     public override void _Ready()
     {
@@ -35,6 +37,9 @@ public partial class Character : Node2D
         UpdateHealthLabel();
         HealthBar = GetNode<GameManager>("../GameManagerScene").GetHealthBar(bFacingLeft ? 0 : 1);
         HealthBar.SetFacingLeft(bFacingLeft);
+        
+        pendingAction = StandardAction;
+        performingAction = StandardAction;
     }
 
     public void Restart()
@@ -72,12 +77,16 @@ public partial class Character : Node2D
 
     public void AnimateAction(ActionBase action)
     {
+        performingAction.OnAnimationFinished(this);
         action.OnAnimationStarted(this);
+        performingAction = action;
     }
     
     public void AnimateAction()
     {
+        performingAction.OnAnimationFinished(this);
         pendingAction.OnAnimationStarted(this);
+        performingAction = pendingAction;
     }
 
     public void AnimateReaction()
@@ -85,6 +94,11 @@ public partial class Character : Node2D
         if (bTookDamageThisExecution)
         {
             SpriteNode.Texture = HurtSprite;
+        }
+        else
+        {
+            //StandardAction.OnAnimationStarted(this);
+            AnimateAction(StandardAction);
         }
     }
     

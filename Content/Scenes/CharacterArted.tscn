@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://cl6rk8d7h4swf" path="res://src/Character.cs" id="1_i7ms1"]
 [ext_resource type="Texture2D" uid="uid://2i8nvv8hpxin" path="res://Content/Sprites/RedManPoses/Hurt.png" id="2_1776b"]
 [ext_resource type="Texture2D" uid="uid://buc4ph7fhsuly" path="res://Content/Sprites/RedManPoses/Stand.png" id="2_i7ms1"]
+[ext_resource type="Resource" uid="uid://ddb2ss5yt8gk6" path="res://Content/Actions/stand.tres" id="3_axg4b"]
 
 [node name="CharacterArted" type="Node2D" unique_id=2010215541]
 script = ExtResource("1_i7ms1")
 HurtSprite = ExtResource("2_1776b")
+StandardAction = ExtResource("3_axg4b")
 
 [node name="SpriteNode" type="Sprite2D" parent="." unique_id=1190486685]
 z_index = 1

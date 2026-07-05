@@ -11,4 +11,10 @@ public partial class ActionAttackGrab : ActionAttack
         ownerCharacter.ForegroundSpriteNode.Texture = ForegroundTexture;
         ownerCharacter.SpriteNode.ZIndex = 0;
     }
+
+    public override void OnAnimationFinished(Character ownerCharacter)
+    {
+        ownerCharacter.ForegroundSpriteNode.Texture = null;
+        ownerCharacter.SpriteNode.ZIndex = 1;
+    }
 }
