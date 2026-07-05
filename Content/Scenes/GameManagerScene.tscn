@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://c0d3cgkx6hdcw" path="res://Content/Actions/block_high.tres" id="8_shh8e"]
 [ext_resource type="Script" uid="uid://ox2hgge2dr4k" path="res://src/InputTimer.cs" id="9_reane"]
 [ext_resource type="Script" uid="uid://bkmbajmiahl04" path="res://src/HealthBar.cs" id="12_irp3t"]
+[ext_resource type="LabelSettings" uid="uid://cs3l57wi508xm" path="res://Content/VictoryTextLabelSettings.tres" id="13_abu86"]
 
 [node name="GameManagerScene" type="Node2D" unique_id=2030989314]
 script = ExtResource("1_ifhs8")
@@ -76,3 +77,14 @@ offset_top = -20.0
 offset_right = 10.0
 offset_bottom = -10.0
 metadata/_edit_use_anchors_ = true
+
+[node name="VictoryLabel" type="Label" parent="." unique_id=1065510746]
+z_index = 5
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_right = 41.0
+offset_bottom = 23.0
+grow_horizontal = 2
+label_settings = ExtResource("13_abu86")

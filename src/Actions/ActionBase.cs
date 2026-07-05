@@ -49,6 +49,11 @@ public partial class ActionBase : Resource
         //return ActionCounters.Contains(otherAction.ActionName);
     }
 
-    // Not yet in use!
     public virtual void OnActionSucceeded(Character ownerCharacter, Character targetCharacter) { }
+
+    public virtual void OnAnimationStarted(Character ownerCharacter)
+    {
+        GD.Print($"P{ownerCharacter.GetID()} Animating: {ActionName}");
+        ownerCharacter.SpriteNode.Texture = AnimationSprite;
+    }
 }

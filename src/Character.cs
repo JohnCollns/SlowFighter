@@ -9,7 +9,8 @@ public partial class Character : Node2D
     [Export] public bool bShowHealthLabel = true;
     public bool bTookDamageThisExecution = false;
 
-    private Sprite2D SpriteNode;
+    public Sprite2D SpriteNode { get; private set; }
+    public Sprite2D ForegroundSpriteNode { get; private set; }
     [Export] public Texture2D HurtSprite;
     private Label HealthLabel;
     //private ColorRect HealthBar;
@@ -22,6 +23,9 @@ public partial class Character : Node2D
         SpriteNode = GetNode<Sprite2D>("SpriteNode");
         SpriteNode.FlipH = !bFacingLeft;
         SpriteNode.Position = new Vector2(SpriteNode.Position.X * (bFacingLeft ? 1f : -1f), SpriteNode.Position.Y);
+        ForegroundSpriteNode = GetNode<Sprite2D>("ForegroundSpriteNode");
+        ForegroundSpriteNode.FlipH = !bFacingLeft;
+        ForegroundSpriteNode.Position = SpriteNode.Position;
         
         HealthLabel = GetNode<Label>("HealthLabel");
         HealthLabel.Position = new Vector2(HealthLabel.Position.X * (bFacingLeft ? 1f : -1f), HealthLabel.Position.Y);
@@ -68,13 +72,12 @@ public partial class Character : Node2D
 
     public void AnimateAction(ActionBase action)
     {
-        GD.Print($"P{GetID()} Animating: {action.ActionName}");
-        SpriteNode.Texture = action.AnimationSprite;
+        action.OnAnimationStarted(this);
     }
     
     public void AnimateAction()
     {
-        SpriteNode.Texture = pendingAction.AnimationSprite;
+        pendingAction.OnAnimationStarted(this);
     }
 
     public void AnimateReaction()

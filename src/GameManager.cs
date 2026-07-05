@@ -36,6 +36,7 @@ public partial class GameManager : Node
     private AudioStreamPlayer audioStreamPlayer;
     private HealthBar HealthBar0;
     private HealthBar HealthBar1;
+    private Label VictoryLabel;
     
     private GamePhase gamePhase;
     private double phaseTimeRemaining;
@@ -57,6 +58,7 @@ public partial class GameManager : Node
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
         HealthBar0 = GetNode<HealthBar>("HealthBar0");
         HealthBar1 = GetNode<HealthBar>("HealthBar1");
+        VictoryLabel = GetNode<Label>("VictoryLabel");
     }
 
     public override void _Process(double delta)
@@ -150,9 +152,6 @@ public partial class GameManager : Node
         // }
         
         StartExecutionFrame();
-        
-        if (Player0.IsDead() || Player1.IsDead())
-            HandleFinishedPhase();
     }
 
     private void HandleFinishedPhase()
@@ -161,14 +160,17 @@ public partial class GameManager : Node
         if (Player0.IsDead() && Player1.IsDead())
         {
             GD.Print("Draw");
+            VictoryLabel.Text = "Draw!";
         }
         else if (Player0.IsDead())
         {
             GD.Print("Player 1 Wins");
+            VictoryLabel.Text = "Right Wins!";
         }
         else if (Player1.IsDead())
         {
             GD.Print("Player 0 Wins");
+            VictoryLabel.Text = "Left Wins!";
         }
     }
 
@@ -236,6 +238,9 @@ public partial class GameManager : Node
     {
         Player0.AnimateReaction();
         Player1.AnimateReaction();
+        
+        if (Player0.IsDead() || Player1.IsDead())
+            HandleFinishedPhase();
     }
 
     // private void HandleMinorAttack()

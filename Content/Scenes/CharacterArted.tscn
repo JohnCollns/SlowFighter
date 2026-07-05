@@ -9,9 +9,14 @@ script = ExtResource("1_i7ms1")
 HurtSprite = ExtResource("2_1776b")
 
 [node name="SpriteNode" type="Sprite2D" parent="." unique_id=1190486685]
+z_index = 1
 texture_filter = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_i7ms1")
+
+[node name="ForegroundSpriteNode" type="Sprite2D" parent="." unique_id=730257261]
+z_index = 2
+scale = Vector2(0.25, 0.25)
 
 [node name="HealthLabel" type="Label" parent="." unique_id=2016536921]
 offset_left = -177.0

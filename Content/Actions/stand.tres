@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://ddb2ss5yt8gk6"]
+[gd_resource type="Resource" format=3 uid="uid://ddb2ss5yt8gk6"]
 
 [ext_resource type="Texture2D" uid="uid://buc4ph7fhsuly" path="res://Content/Sprites/RedManPoses/Stand.png" id="1_hxbdd"]
-[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="1_ylywb"]
+[ext_resource type="Script" uid="uid://xw5a201v7ixl" path="res://src/Actions/ActionClearForeground.cs" id="2_hxbdd"]
 
 [resource]
-script = ExtResource("1_ylywb")
+script = ExtResource("2_hxbdd")
 ActionName = "Stand"
 AnimationSprite = ExtResource("1_hxbdd")
 metadata/_custom_type_script = "uid://c0np48somnu43"

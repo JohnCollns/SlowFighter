@@ -9,4 +9,10 @@ public partial class ActionBlock : ActionBase
     {
         ownerCharacter.Heal(HealOnSuccess);
     }
+
+    public override void OnAnimationStarted(Character ownerCharacter)
+    {
+        base.OnAnimationStarted(ownerCharacter);
+        ownerCharacter.SpriteNode.ZIndex = 0;
+    }
 }
