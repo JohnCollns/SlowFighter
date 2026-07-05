@@ -6,6 +6,7 @@ public partial class Character : Node2D
     [Export] public bool bFacingLeft = true;
     [Export] public float MaxHealth = 100f;
     public float Health = 100f;
+    [Export] public bool bShowHealthLabel = true;
 
     private Sprite2D SpriteNode;
     private Label HealthLabel;
@@ -21,7 +22,9 @@ public partial class Character : Node2D
         SpriteNode.Position = new Vector2(SpriteNode.Position.X * (bFacingLeft ? 1f : -1f), SpriteNode.Position.Y);
         
         HealthLabel = GetNode<Label>("HealthLabel");
-        //HealthBar = GetNode<ColorRect>("HealthBar");
+        HealthLabel.Position = new Vector2(HealthLabel.Position.X * (bFacingLeft ? 1f : -1f), HealthLabel.Position.Y);
+        HealthLabel.SetVisible(bShowHealthLabel);
+        
         Health = MaxHealth;
         UpdateHealthLabel();
         HealthBar = GetNode<GameManager>("../GameManagerScene").GetHealthBar(bFacingLeft ? 0 : 1);
@@ -32,6 +35,7 @@ public partial class Character : Node2D
     {
         Health = MaxHealth;
         UpdateHealthLabel();
+        HealthBar.SetPercent(Health / MaxHealth);
         // set to standing sprite
     }
 
@@ -43,6 +47,7 @@ public partial class Character : Node2D
     public void TakeDamage(float amount)
     {
         Health -= amount;
+        HealthBar.SetPercent(Health / MaxHealth);
         UpdateHealthLabel();
         // What to do if health drops below zero?
         //GD.Print("Damage taken, resultant health: " + Health);
@@ -54,6 +59,7 @@ public partial class Character : Node2D
         if  (Health > MaxHealth)
             Health = MaxHealth;
         UpdateHealthLabel();
+        HealthBar.SetPercent(Health / MaxHealth);
     }
 
     public void AnimateAction(ActionBase action)

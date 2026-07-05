@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://bdu0umsww013k"]
+
+[ext_resource type="Texture2D" uid="uid://dtp1cdxpkim46" path="res://Content/Sprites/Character/Placeholder/LowKick.png" id="1_ntj36"]
+[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="2_5a1d0"]
+
+[resource]
+script = ExtResource("2_5a1d0")
+ActionName = "Low Kick"
+AnimationSprite = ExtResource("1_ntj36")
+ActionCounters = PackedStringArray("Block High", "Stand")
+DamageOnCounter = 15.0
+DamageOnClash = 5.0
+metadata/_custom_type_script = "uid://c0np48somnu43"

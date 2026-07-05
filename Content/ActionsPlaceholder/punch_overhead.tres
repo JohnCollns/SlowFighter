@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://vnd0vuiwpxlv"]
+
+[ext_resource type="Texture2D" uid="uid://g5n3hv4g3el3" path="res://Content/Sprites/Character/Placeholder/Overhead.png" id="1_1uiva"]
+[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="2_i4sns"]
+
+[resource]
+script = ExtResource("2_i4sns")
+ActionName = "Overhead"
+AnimationSprite = ExtResource("1_1uiva")
+ActionCounters = PackedStringArray("Block Low", "Stand")
+DamageOnCounter = 15.0
+DamageOnClash = 5.0
+metadata/_custom_type_script = "uid://c0np48somnu43"

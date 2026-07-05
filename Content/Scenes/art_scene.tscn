@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://udbdtqh1u1eo"]
+
+[ext_resource type="Texture2D" uid="uid://bbu67i0318nc7" path="res://Content/Sprites/beach1.png" id="1_28f8f"]
+[ext_resource type="PackedScene" uid="uid://ugbj7lxbaprj" path="res://Content/Scenes/GameManagerScene.tscn" id="2_6oafu"]
+[ext_resource type="PackedScene" uid="uid://c08an36a4wcnh" path="res://Content/Scenes/CharacterArted.tscn" id="3_28f8f"]
+
+[node name="DemoScene" type="Node2D" unique_id=766255491]
+
+[node name="Beach1" type="Sprite2D" parent="." unique_id=913500139]
+texture = ExtResource("1_28f8f")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1234944983]
+zoom = Vector2(4, 4)
+
+[node name="GameManagerScene" parent="." unique_id=2030989314 node_paths=PackedStringArray("Player0", "Player1") instance=ExtResource("2_6oafu")]
+position = Vector2(0, -115.615)
+Player0 = NodePath("../CharacterArted0")
+Player1 = NodePath("../CharacterArted1")
+MusicEnabled = false
+
+[node name="CharacterArted0" parent="." unique_id=2010215541 instance=ExtResource("3_28f8f")]
+position = Vector2(-3.438, 0)
+
+[node name="CharacterArted1" parent="." unique_id=994588398 instance=ExtResource("3_28f8f")]
+position = Vector2(3.438, 0)
+bFacingLeft = false

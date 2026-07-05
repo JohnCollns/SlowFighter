@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SlowFighter"
-run/main_scene="uid://btyjd63om77d2"
+run/main_scene="uid://udbdtqh1u1eo"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

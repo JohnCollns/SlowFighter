@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://bveaqe4rdhhyi"]
+
+[ext_resource type="Texture2D" uid="uid://kb43kvu3ub4l" path="res://Content/Sprites/Character/Placeholder/Jab.png" id="1_viwn5"]
+[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="2_8ny6r"]
+
+[resource]
+script = ExtResource("2_8ny6r")
+ActionName = "Jab"
+AnimationSprite = ExtResource("1_viwn5")
+ActionCounters = PackedStringArray("Overhead", "Low Kick", "Grab", "Stand")
+DamageOnCounter = 5.0
+DamageOnClash = 3.0
+metadata/_custom_type_script = "uid://c0np48somnu43"

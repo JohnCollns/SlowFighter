@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://yqamrt8n0ij6"]
+
+[ext_resource type="Texture2D" uid="uid://dp0mnr5inj0ok" path="res://Content/Sprites/Character/Placeholder/BlockHigh.png" id="1_6imym"]
+[ext_resource type="Script" uid="uid://x5j0krf3nvx4" path="res://src/Actions/ActionBlock.cs" id="2_gipag"]
+
+[resource]
+script = ExtResource("2_gipag")
+HealOnSuccess = 10.0
+ActionName = "Block High"
+AnimationSprite = ExtResource("1_6imym")
+ActionCounters = PackedStringArray("Overhead", "Jab")
+metadata/_custom_type_script = "uid://c0np48somnu43"

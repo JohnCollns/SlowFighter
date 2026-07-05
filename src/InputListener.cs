@@ -11,7 +11,6 @@ public partial class InputListener : Node
     public override void _Ready()
     {
         gameManager = GetParent<GameManager>();
-        DebugPrintActionMap();
     }
     
     public override void _Input(InputEvent inputEvent)

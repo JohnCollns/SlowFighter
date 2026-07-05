@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://dbssuwkn68b31"]
+
+[ext_resource type="Texture2D" uid="uid://dqchqimg4x60e" path="res://Content/Sprites/Character/Placeholder/Grab.png" id="1_1lv1i"]
+[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="2_tx5m7"]
+
+[resource]
+script = ExtResource("2_tx5m7")
+ActionName = "Grab"
+AnimationSprite = ExtResource("1_1lv1i")
+ActionCounters = PackedStringArray("Block High", "Block Low", "Stand")
+DamageOnCounter = 10.0
+metadata/_custom_type_script = "uid://c0np48somnu43"

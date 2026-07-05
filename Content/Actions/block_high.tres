@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://c0d3cgkx6hdcw"]
 
-[ext_resource type="Texture2D" uid="uid://dp0mnr5inj0ok" path="res://Content/Sprites/Character/Placeholder/BlockHigh.png" id="1_dk80q"]
+[ext_resource type="Texture2D" uid="uid://bc44iyu87pvlh" path="res://Content/Sprites/RedManPoses/BlockHigh.png" id="1_dk80q"]
 [ext_resource type="Script" uid="uid://x5j0krf3nvx4" path="res://src/Actions/ActionBlock.cs" id="2_dk80q"]
 
 [resource]
