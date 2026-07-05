@@ -7,6 +7,7 @@
 script = ExtResource("2_dk80q")
 HealOnSuccess = 10.0
 ActionName = "Block High"
+ActionType = 1
 AnimationSprite = ExtResource("1_dk80q")
 ActionCounters = PackedStringArray("Overhead", "Jab")
 metadata/_custom_type_script = "uid://c0np48somnu43"

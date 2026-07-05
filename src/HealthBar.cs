@@ -59,7 +59,6 @@ public partial class HealthBar : Node2D
     {
         percent = Mathf.Max(percent, 0f);
         //percent = PerformEasing(percent);
-        // Do some logarithmic adjustment
         ColourRect.Scale = new Vector2(Mathf.Lerp(FullWidthScale, 0f, 1f - percent), 1f);
         ColourRect.Color = FullColour.Lerp(EmptyColour, 1f - percent);
     }

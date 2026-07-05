@@ -5,6 +5,7 @@
 
 [node name="Character" type="Node2D" unique_id=1292187384]
 script = ExtResource("1_3xdt2")
+HurtSprite = ExtResource("2_3xdt2")
 
 [node name="SpriteNode" type="Sprite2D" parent="." unique_id=790732550]
 position = Vector2(90, 0)

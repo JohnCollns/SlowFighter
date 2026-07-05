@@ -7,8 +7,10 @@ public partial class Character : Node2D
     [Export] public float MaxHealth = 100f;
     public float Health = 100f;
     [Export] public bool bShowHealthLabel = true;
+    public bool bTookDamageThisExecution = false;
 
     private Sprite2D SpriteNode;
+    [Export] public Texture2D HurtSprite;
     private Label HealthLabel;
     //private ColorRect HealthBar;
     private HealthBar HealthBar;
@@ -49,6 +51,8 @@ public partial class Character : Node2D
         Health -= amount;
         HealthBar.SetPercent(Health / MaxHealth);
         UpdateHealthLabel();
+        if (amount > 0f)
+            bTookDamageThisExecution = true;
         // What to do if health drops below zero?
         //GD.Print("Damage taken, resultant health: " + Health);
     }
@@ -64,6 +68,7 @@ public partial class Character : Node2D
 
     public void AnimateAction(ActionBase action)
     {
+        GD.Print($"P{GetID()} Animating: {action.ActionName}");
         SpriteNode.Texture = action.AnimationSprite;
     }
     
@@ -71,6 +76,16 @@ public partial class Character : Node2D
     {
         SpriteNode.Texture = pendingAction.AnimationSprite;
     }
+
+    public void AnimateReaction()
+    {
+        if (bTookDamageThisExecution)
+        {
+            SpriteNode.Texture = HurtSprite;
+        }
+    }
     
     public bool IsDead() { return Health <= 0f; }
+    
+    public int GetID() { return bFacingLeft ? 0 : 1; }
 }

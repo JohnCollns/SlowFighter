@@ -11,6 +11,15 @@ public partial class GameManager : Node
         Executing,
         Finished
     }
+
+    public enum ExecutionFrame
+    {
+        Block,
+        //MinorAttack,
+        //MajorAttack,
+        Attack,
+        Reaction
+    }
     
     [Export] public Character Player0;
     [Export] public Character Player1;
@@ -31,6 +40,13 @@ public partial class GameManager : Node
     private GamePhase gamePhase;
     private double phaseTimeRemaining;
     private int executionCounter = 0;
+    private ExecutionFrame executionFrame;
+    //[Export] public int NumberOfExecutionFrames = 4;
+    [Export] public float ExecutionFramesDuration;
+    private float executionFrameTimeElapsed = 0f;
+    private ActionBase player0ExecutingAction;
+    private ActionBase player1ExecutingAction;
+    private bool bWillClash = false;
 
 
     public override void _Ready()
@@ -69,58 +85,71 @@ public partial class GameManager : Node
 
     private void HandleExecutingProcess(double delta)
     {
-        
         phaseTimeRemaining -= delta;
         if (phaseTimeRemaining <= 0f)
             StartInputPhase();          // may want to change this later
+
+        executionFrameTimeElapsed += (float)delta;
+        if (executionFrameTimeElapsed >= ExecutionFramesDuration)
+        {
+            executionFrame += 1;
+            StartExecutionFrame();
+        }
     }
 
     private void StartInputPhase()
     {
         phaseTimeRemaining = InputDuration;
         gamePhase = GamePhase.Input;
-        Player0.pendingAction = DefaultAction;
-        Player0.AnimateAction();
-        Player1.pendingAction = DefaultAction;
-        Player1.AnimateAction();
+        Player0.AnimateAction(DefaultAction);
+        Player1.AnimateAction(DefaultAction);
+        Player0.bTookDamageThisExecution = false;
+        Player1.bTookDamageThisExecution = false;
     }
 
     private void StartExecutingPhase()
     {
-        phaseTimeRemaining = ExecutionDuration;
+        //phaseTimeRemaining = ExecutionDuration;
+        phaseTimeRemaining = 4 * ExecutionFramesDuration;   // How can I make this ExecutionFrame number of entries?
+        executionFrame = ExecutionFrame.Block;
         gamePhase = GamePhase.Executing;
-        Player0.AnimateAction();
-        Player1.AnimateAction();
+        // Player0.AnimateAction();
+        // Player1.AnimateAction();
+        bWillClash = false;
 
-        ActionBase player0Action = Player0.pendingAction;
-        ActionBase player1Action = Player1.pendingAction;
-        GD.Print($"Executing {executionCounter}: p0: {player0Action.ActionName},\tp1: {player1Action.ActionName}");
+        player0ExecutingAction = Player0.pendingAction;
+        player1ExecutingAction = Player1.pendingAction;
+        Player0.pendingAction = DefaultAction;
+        Player1.pendingAction = DefaultAction;
+        GD.Print($"Executing {executionCounter}: p0: {player0ExecutingAction.ActionName},\tp1: {player1ExecutingAction.ActionName}");
         executionCounter++;
 
-        bool actionResolved = false;
-        if (player0Action.CountersAction(player1Action))
-        {
-            // p0 executes, p1 fails
-            Player1.TakeDamage(player0Action.DamageOnCounter);
-            player0Action.OnActionSucceeded(Player0, Player1);
-            actionResolved = true;
-            GD.Print($"  p0: {player0Action.ActionName} counters p1: {player1Action.ActionName}, dealing {player0Action.DamageOnCounter} damage");
-        }
-        if (player1Action.CountersAction(player0Action))
-        {
-            // p1 executes, p0 fails
-            Player0.TakeDamage(player1Action.DamageOnCounter);
-            player0Action.OnActionSucceeded(Player1, Player0);
-            actionResolved = true;
-            GD.Print($"  p1: {player1Action.ActionName} counters p0: {player0Action.ActionName}, dealing {player1Action.DamageOnCounter} damage");
-        }
-
-        if (!actionResolved)
-        {
-            Player0.TakeDamage(player1Action.DamageOnClash);
-            Player1.TakeDamage(player0Action.DamageOnClash);
-            GD.Print($"  clashing, taking damage p0: {player1Action.DamageOnClash},\tp1: {player0Action.DamageOnClash}");
-        }
+        // bool actionResolved = false;
+        // if (player0ExecutingAction.CountersAction(player1ExecutingAction))
+        // {
+        //     // p0 executes, p1 fails
+        //     Player1.TakeDamage(player0ExecutingAction.DamageOnCounter);
+        //     player0ExecutingAction.OnActionSucceeded(Player0, Player1);
+        //     actionResolved = true;
+        //     GD.Print($"  p0: {player0ExecutingAction.ActionName} counters p1: {player1ExecutingAction.ActionName}, dealing {player0ExecutingAction.DamageOnCounter} damage");
+        // }
+        // if (player1ExecutingAction.CountersAction(player0ExecutingAction))
+        // {
+        //     // p1 executes, p0 fails
+        //     Player0.TakeDamage(player1ExecutingAction.DamageOnCounter);
+        //     player0ExecutingAction.OnActionSucceeded(Player1, Player0);
+        //     actionResolved = true;
+        //     GD.Print($"  p1: {player1ExecutingAction.ActionName} counters p0: {player0ExecutingAction.ActionName}, dealing {player1ExecutingAction.DamageOnCounter} damage");
+        // }
+        //
+        // if (!actionResolved)
+        // {
+        //     Player0.TakeDamage(player1ExecutingAction.DamageOnClash);
+        //     Player1.TakeDamage(player0ExecutingAction.DamageOnClash);
+        //     GD.Print($"  clashing, taking damage p0: {player1ExecutingAction.DamageOnClash},\tp1: {player0ExecutingAction.DamageOnClash}");
+        // }
+        
+        StartExecutionFrame();
         
         if (Player0.IsDead() || Player1.IsDead())
             HandleFinishedPhase();
@@ -142,6 +171,96 @@ public partial class GameManager : Node
             GD.Print("Player 0 Wins");
         }
     }
+
+    private void StartExecutionFrame()
+    {
+        executionFrameTimeElapsed = 0;
+        GD.Print($"Starting execution frame: {executionFrame}");
+        switch (executionFrame)
+        {
+            case ExecutionFrame.Block: HandleBlockFrame(); break;
+            // case ExecutionFrame.MinorAttack: HandleMinorAttack(); break;
+            // case ExecutionFrame.MajorAttack: HandleMajorAttack(); break;
+            case ExecutionFrame.Attack: HandleAttack(); break;
+            case ExecutionFrame.Reaction: HandleReaction(); break;
+        }
+    }
+
+    private void HandleBlockFrame()
+    {
+        if (player0ExecutingAction.ActionType == ActionBase.ActionBaseType.Block)
+        {
+            Player0.AnimateAction(player0ExecutingAction);
+        }
+        if (player1ExecutingAction.ActionType == ActionBase.ActionBaseType.Block)
+        {
+            Player1.AnimateAction(player1ExecutingAction);
+        }
+    }
+
+    private void HandleAttack()
+    {
+        bool actionResolved = false;
+        if (player0ExecutingAction.CountersAction(player1ExecutingAction))
+        {
+            // p0 executes, p1 fails
+            Player1.TakeDamage(player0ExecutingAction.DamageOnCounter);
+            player0ExecutingAction.OnActionSucceeded(Player0, Player1);
+            Player0.AnimateAction(player0ExecutingAction);
+            Player1.AnimateAction(player1ExecutingAction);
+            actionResolved = true;
+            GD.Print($"  p0: {player0ExecutingAction.ActionName} counters p1: {player1ExecutingAction.ActionName}, dealing {player0ExecutingAction.DamageOnCounter} damage");
+        }
+        if (player1ExecutingAction.CountersAction(player0ExecutingAction))
+        {
+            // p1 executes, p0 fails
+            Player0.TakeDamage(player1ExecutingAction.DamageOnCounter);
+            player1ExecutingAction.OnActionSucceeded(Player1, Player0);
+            Player0.AnimateAction(player0ExecutingAction);
+            Player1.AnimateAction(player1ExecutingAction);
+            actionResolved = true;
+            GD.Print($"  p1: {player1ExecutingAction.ActionName} counters p0: {player0ExecutingAction.ActionName}, dealing {player1ExecutingAction.DamageOnCounter} damage");
+        }
+
+        if (!actionResolved)
+        {
+            Player0.TakeDamage(player1ExecutingAction.DamageOnClash);
+            Player1.TakeDamage(player0ExecutingAction.DamageOnClash);
+            Player0.AnimateAction(player0ExecutingAction);
+            Player1.AnimateAction(player1ExecutingAction);
+            GD.Print($"  clashing, taking damage p0: {player1ExecutingAction.DamageOnClash},\tp1: {player0ExecutingAction.DamageOnClash}");
+        }
+    }
+
+    private void HandleReaction()
+    {
+        Player0.AnimateReaction();
+        Player1.AnimateReaction();
+    }
+
+    // private void HandleMinorAttack()
+    // {
+    //     if (player0ExecutingAction.ActionType == ActionBase.ActionBaseType.MinorAttack)
+    //     {
+    //         Player0.AnimateAction(player0ExecutingAction);
+    //     }
+    //     if (player1ExecutingAction.ActionType == ActionBase.ActionBaseType.MinorAttack)
+    //     {
+    //         Player1.AnimateAction(player1ExecutingAction);
+    //     }
+    // }
+    //
+    // private void HandleMajorAttack()
+    // {
+    //     if (player0ExecutingAction.ActionType == ActionBase.ActionBaseType.MajorAttack)
+    //     {
+    //         Player0.AnimateAction(player0ExecutingAction);
+    //     }
+    //     if (player1ExecutingAction.ActionType == ActionBase.ActionBaseType.MajorAttack)
+    //     {
+    //         Player1.AnimateAction(player1ExecutingAction);
+    //     }
+    // }
 
     public void BeginGame()
     {

@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://dn288104dnw46"]
+[gd_resource type="Resource" format=3 uid="uid://dn288104dnw46"]
 
-[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="1_0bbww"]
 [ext_resource type="Texture2D" uid="uid://bxqd3b7htay54" path="res://Content/Sprites/RedManPoses/Overhead.png" id="1_hhs8o"]
+[ext_resource type="Script" uid="uid://n1ebolkpxc7q" path="res://src/Actions/ActionAttack.cs" id="2_hhs8o"]
 
 [resource]
-script = ExtResource("1_0bbww")
+script = ExtResource("2_hhs8o")
 ActionName = "Overhead"
+ActionType = 3
 AnimationSprite = ExtResource("1_hhs8o")
 ActionCounters = PackedStringArray("Block Low", "Stand")
 DamageOnCounter = 15.0

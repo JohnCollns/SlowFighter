@@ -7,7 +7,15 @@ using Godot.Collections;
 [GlobalClass]
 public partial class ActionBase : Resource
 {
+    public enum ActionBaseType
+    {
+        Stand,
+        Block,
+        MinorAttack,    // Jab, Grab
+        MajorAttack,    // Overhead, Low Kick
+    }
     [Export] public string ActionName { get; protected set; }
+    [Export] public ActionBaseType ActionType { get; protected set; }
 
     // [Export] public string[] a;
     // [Export] public Array<string> b;

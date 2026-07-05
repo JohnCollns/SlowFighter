@@ -19,6 +19,7 @@ InputDuration = 1.0
 ExecutionDuration = 0.5
 DefaultAction = ExtResource("2_3nila")
 MusicTrack = ExtResource("3_rhbhk")
+ExecutionFramesDuration = 0.4
 
 [node name="InputListener" type="Node" parent="." unique_id=1061998948]
 script = ExtResource("2_i52vu")

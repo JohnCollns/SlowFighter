@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://dfx6okisp3oh5"]
+[gd_resource type="Resource" format=3 uid="uid://dfx6okisp3oh5"]
 
-[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="1_d1gxr"]
 [ext_resource type="Texture2D" uid="uid://3fnq2f6nl0e7" path="res://Content/Sprites/RedManPoses/Jab.png" id="1_xt20e"]
+[ext_resource type="Script" uid="uid://n1ebolkpxc7q" path="res://src/Actions/ActionAttack.cs" id="2_xt20e"]
 
 [resource]
-script = ExtResource("1_d1gxr")
+script = ExtResource("2_xt20e")
 ActionName = "Jab"
+ActionType = 2
 AnimationSprite = ExtResource("1_xt20e")
 ActionCounters = PackedStringArray("Overhead", "Low Kick", "Grab", "Stand")
 DamageOnCounter = 5.0

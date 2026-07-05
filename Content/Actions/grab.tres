@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="ActionBase" format=3 uid="uid://ckl4qi0mpefvu"]
+[gd_resource type="Resource" format=3 uid="uid://ckl4qi0mpefvu"]
 
 [ext_resource type="Texture2D" uid="uid://dgyx85w5s8lom" path="res://Content/Sprites/RedManPoses/Grab.png" id="1_ojxl4"]
-[ext_resource type="Script" uid="uid://c0np48somnu43" path="res://src/Actions/ActionBase.cs" id="1_pbmkb"]
+[ext_resource type="Script" uid="uid://n1ebolkpxc7q" path="res://src/Actions/ActionAttack.cs" id="2_ojxl4"]
 
 [resource]
-script = ExtResource("1_pbmkb")
+script = ExtResource("2_ojxl4")
 ActionName = "Grab"
+ActionType = 2
 AnimationSprite = ExtResource("1_ojxl4")
 ActionCounters = PackedStringArray("Block High", "Block Low", "Stand")
 DamageOnCounter = 10.0
