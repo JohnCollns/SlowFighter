@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://dw2eeaqp85nmp" path="res://Content/Actions/block_low.tres" id="7_abu86"]
 [ext_resource type="Resource" uid="uid://c0d3cgkx6hdcw" path="res://Content/Actions/block_high.tres" id="8_shh8e"]
 [ext_resource type="Script" uid="uid://ox2hgge2dr4k" path="res://src/InputTimer.cs" id="9_reane"]
+[ext_resource type="Script" uid="uid://bkmbajmiahl04" path="res://src/HealthBar.cs" id="12_irp3t"]
 
 [node name="GameManagerScene" type="Node2D" unique_id=2030989314]
 script = ExtResource("1_ifhs8")
@@ -45,3 +46,26 @@ offset_bottom = 40.0
 pivot_offset = Vector2(20, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1522349306]
+
+[node name="HealthBar0" type="Node" parent="." unique_id=796402844]
+script = ExtResource("12_irp3t")
+FullWidthLiteral = 30.0
+FullWidthScale = 5.0
+Height = 10.0
+FullColour = Color(1.2513996e-06, 0.72807896, 1.347661e-06, 1)
+EmptyColour = Color(0.9554407, 0.53885746, 0.47268307, 1)
+
+[node name="ColourRect" type="ColorRect" parent="HealthBar0" unique_id=238966551]
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -10.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar1" type="Node" parent="." unique_id=1320664242]
+script = ExtResource("12_irp3t")
+
+[node name="ColourRect" type="ColorRect" parent="HealthBar1" unique_id=129559814]
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -10.0
+metadata/_edit_use_anchors_ = true

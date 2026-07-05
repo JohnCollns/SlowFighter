@@ -16,10 +16,3 @@ offset_top = -110.0
 offset_right = -14.0
 offset_bottom = -87.0
 text = "100"
-
-[node name="ActionLabel" type="Label" parent="." unique_id=1140931769]
-offset_left = -53.0
-offset_top = -88.0
-offset_right = -13.0
-offset_bottom = -65.0
-text = "Action"

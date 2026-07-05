@@ -25,6 +25,8 @@ public partial class GameManager : Node
     private InputListener inputListener;
     private InputTimer inputTimer;
     private AudioStreamPlayer audioStreamPlayer;
+    private HealthBar HealthBar0;
+    private HealthBar HealthBar1;
     
     private GamePhase gamePhase;
     private double phaseTimeRemaining;
@@ -37,6 +39,8 @@ public partial class GameManager : Node
         inputListener = GetNode<InputListener>("InputListener");
         inputTimer = GetNode<InputTimer>("InputTimer");
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+        HealthBar0 = GetNode<HealthBar>("HealthBar0");
+        HealthBar1 = GetNode<HealthBar>("HealthBar1");
     }
 
     public override void _Process(double delta)
@@ -159,5 +163,10 @@ public partial class GameManager : Node
     public Character GetPlayer(int index)
     {
         return index == 0 ? Player0 : Player1;
+    }
+
+    public HealthBar GetHealthBar(int index)
+    {
+        return index == 0 ? HealthBar0 : HealthBar1;
     }
 }

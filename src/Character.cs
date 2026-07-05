@@ -9,7 +9,8 @@ public partial class Character : Node2D
 
     private Sprite2D SpriteNode;
     private Label HealthLabel;
-    private Label ActionLabel;
+    //private ColorRect HealthBar;
+    private HealthBar HealthBar;
 
     public ActionBase pendingAction;
 
@@ -20,11 +21,11 @@ public partial class Character : Node2D
         SpriteNode.Position = new Vector2(SpriteNode.Position.X * (bFacingLeft ? 1f : -1f), SpriteNode.Position.Y);
         
         HealthLabel = GetNode<Label>("HealthLabel");
+        //HealthBar = GetNode<ColorRect>("HealthBar");
         Health = MaxHealth;
         UpdateHealthLabel();
-        
-        ActionLabel =  GetNode<Label>("ActionLabel");
-        ActionLabel.Text = "";
+        HealthBar = GetNode<GameManager>("../GameManagerScene").GetHealthBar(bFacingLeft ? 0 : 1);
+        HealthBar.SetFacingLeft(bFacingLeft);
     }
 
     public void Restart()
