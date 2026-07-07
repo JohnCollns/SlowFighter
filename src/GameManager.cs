@@ -37,6 +37,7 @@ public partial class GameManager : Node
     private HealthBar HealthBar0;
     private HealthBar HealthBar1;
     private Label VictoryLabel;
+    private Explainer explainer;
     
     private GamePhase gamePhase;
     private double phaseTimeRemaining;
@@ -59,6 +60,7 @@ public partial class GameManager : Node
         HealthBar0 = GetNode<HealthBar>("HealthBar0");
         HealthBar1 = GetNode<HealthBar>("HealthBar1");
         VictoryLabel = GetNode<Label>("VictoryLabel");
+        explainer = GetNode<Explainer>("Explainer");
     }
 
     public override void _Process(double delta)
@@ -224,8 +226,19 @@ public partial class GameManager : Node
     {
         Player0.Restart();
         Player1.Restart();
+        explainer.SetVisible(false);
         StartMusic();
         StartInputPhase();
+    }
+
+    public void Restart()
+    {
+        GetTree().ReloadCurrentScene();
+    }
+
+    public void SetExplainerVisibility(bool visible)
+    {
+        explainer.SetVisible(visible);
     }
 
     private void StartMusic()

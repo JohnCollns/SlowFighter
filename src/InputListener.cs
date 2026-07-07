@@ -16,19 +16,27 @@ public partial class InputListener : Node
     public override void _Input(InputEvent inputEvent)
     {
         base._Input(inputEvent);
-        //GD.Print("Input received: " + inputEvent + ",\tDevice: " + inputEvent.Device);
         
-        //if (inputEvent.is)
-        
-        //foreach (String action in ActionNames)
         foreach (KeyValuePair<string, ActionBase> action in ActionMap)
         {
             if (inputEvent.IsActionPressed(action.Key))
             {
-                //GD.Print("Passing action: " + action.Key + " to player: " + inputEvent.Device);
                 GD.Print("Passing action: " + action.Value.ActionName + " to player: " + inputEvent.Device);
                 gameManager.GetPlayer(inputEvent.Device).pendingAction = action.Value;
             }
+        }
+
+        if (inputEvent.IsActionPressed("Restart"))
+        {
+            gameManager.Restart();
+        }
+        if (inputEvent.IsActionPressed("help"))
+        {
+            gameManager.SetExplainerVisibility(true);
+        }
+        if (inputEvent.IsActionReleased("help"))
+        {
+            gameManager.SetExplainerVisibility(false);
         }
     }
 

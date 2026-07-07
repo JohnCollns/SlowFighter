@@ -13,6 +13,15 @@
 [ext_resource type="Script" uid="uid://ox2hgge2dr4k" path="res://src/InputTimer.cs" id="9_reane"]
 [ext_resource type="Script" uid="uid://bkmbajmiahl04" path="res://src/HealthBar.cs" id="12_irp3t"]
 [ext_resource type="LabelSettings" uid="uid://cs3l57wi508xm" path="res://Content/VictoryTextLabelSettings.tres" id="13_abu86"]
+[ext_resource type="Script" uid="uid://cknshwgj62yr" path="res://src/Explainer.cs" id="14_shh8e"]
+[ext_resource type="Texture2D" uid="uid://dq6wqvmc7ltfc" path="res://Content/Sprites/ActionIcons/CounterHex.png" id="15_tr0qu"]
+[ext_resource type="Texture2D" uid="uid://cx6mqijl14ax1" path="res://Content/Sprites/ActionIcons/BlockHigh.png" id="16_57s00"]
+[ext_resource type="Texture2D" uid="uid://cj0xy8gur1ss5" path="res://Content/Sprites/ActionIcons/BlockLow.png" id="17_8i3hv"]
+[ext_resource type="LabelSettings" uid="uid://ctvduurr0kna5" path="res://Content/KeyLabelSettings.tres" id="17_8kqmw"]
+[ext_resource type="Texture2D" uid="uid://c60kc03v32imo" path="res://Content/Sprites/ActionIcons/Overhead.png" id="18_8kqmw"]
+[ext_resource type="Texture2D" uid="uid://brc2bn3vxqcvn" path="res://Content/Sprites/ActionIcons/LowKick.png" id="19_nd1bt"]
+[ext_resource type="Texture2D" uid="uid://bmjomr5bxrh0j" path="res://Content/Sprites/ActionIcons/Jab.png" id="20_tr2qm"]
+[ext_resource type="Texture2D" uid="uid://dw7jkakvebb3f" path="res://Content/Sprites/ActionIcons/Grab.png" id="21_mx56c"]
 
 [node name="GameManagerScene" type="Node2D" unique_id=2030989314]
 script = ExtResource("1_ifhs8")
@@ -88,3 +97,144 @@ offset_right = 41.0
 offset_bottom = 23.0
 grow_horizontal = 2
 label_settings = ExtResource("13_abu86")
+
+[node name="Explainer" type="Node" parent="." unique_id=1320201627]
+script = ExtResource("14_shh8e")
+
+[node name="MainLabel" type="Label" parent="Explainer" unique_id=1561906286]
+z_index = 10
+offset_left = -46.0
+offset_top = -112.0
+offset_right = 46.0
+offset_bottom = -89.0
+pivot_offset_ratio = Vector2(0.5, 0)
+text = "How to Play"
+label_settings = ExtResource("13_abu86")
+horizontal_alignment = 1
+
+[node name="CounterHex" type="Sprite2D" parent="Explainer" unique_id=292774830]
+z_index = 8
+position = Vector2(95, 10.16)
+scale = Vector2(0.10060975, 0.10060975)
+texture = ExtResource("15_tr0qu")
+
+[node name="CounterLabel" type="Label" parent="Explainer" unique_id=1432404335]
+z_index = 8
+offset_left = 50.0
+offset_top = -80.0
+offset_right = 143.0
+offset_bottom = -43.0
+text = "Actions Counter
+Other Actions"
+label_settings = ExtResource("17_8kqmw")
+
+[node name="StartLabel" type="Label" parent="Explainer" unique_id=370770413]
+z_index = 8
+offset_left = 43.69
+offset_top = 66.175
+offset_right = 154.69003
+offset_bottom = 103.175
+text = "To Play, Press Start
+At The Same Time"
+label_settings = ExtResource("17_8kqmw")
+
+[node name="Background" type="ColorRect" parent="Explainer" unique_id=895879902]
+z_index = 7
+offset_left = -199.0
+offset_top = -112.0
+offset_right = 199.0
+offset_bottom = 109.0
+color = Color(0.71, 0.71, 0.71, 0.58431375)
+
+[node name="Buttons" type="Node" parent="Explainer" unique_id=2043814166]
+
+[node name="Sprite2D" type="Sprite2D" parent="Explainer/Buttons" unique_id=513384506]
+z_index = 9
+position = Vector2(-167.15, -53.3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("16_57s00")
+
+[node name="Label2" type="Label" parent="Explainer/Buttons" unique_id=672632496]
+z_index = 8
+offset_left = -147.0
+offset_top = -35.0
+offset_right = -70.0
+offset_bottom = 2.0
+text = "↓ Low Block"
+label_settings = ExtResource("17_8kqmw")
+
+[node name="Label3" type="Label" parent="Explainer/Buttons" unique_id=1996763834]
+z_index = 8
+offset_left = -147.0
+offset_top = -9.0
+offset_right = -70.0
+offset_bottom = 28.0
+text = "Y Overhead"
+label_settings = ExtResource("17_8kqmw")
+
+[node name="Label4" type="Label" parent="Explainer/Buttons" unique_id=1419171285]
+z_index = 8
+offset_left = -147.0
+offset_top = 19.0
+offset_right = -70.0
+offset_bottom = 56.0
+text = "A Low Kick"
+label_settings = ExtResource("17_8kqmw")
+
+[node name="Label5" type="Label" parent="Explainer/Buttons" unique_id=1026675582]
+z_index = 8
+offset_left = -147.0
+offset_top = 46.0
+offset_right = -70.0
+offset_bottom = 83.0
+text = "X Jab"
+label_settings = ExtResource("17_8kqmw")
+
+[node name="Label6" type="Label" parent="Explainer/Buttons" unique_id=406780833]
+z_index = 8
+offset_left = -147.0
+offset_top = 74.0
+offset_right = -70.0
+offset_bottom = 111.0
+text = "B Grab"
+label_settings = ExtResource("17_8kqmw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Explainer/Buttons" unique_id=1951850046]
+z_index = 9
+position = Vector2(-167.15, -26.300001)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("17_8i3hv")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Explainer/Buttons" unique_id=386026105]
+z_index = 9
+position = Vector2(-167.15, 0.69999695)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("18_8kqmw")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Explainer/Buttons" unique_id=241373522]
+z_index = 9
+position = Vector2(-167.15, 27.699999)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("19_nd1bt")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Explainer/Buttons" unique_id=400475479]
+z_index = 9
+position = Vector2(-167.15, 54.699997)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_tr2qm")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Explainer/Buttons" unique_id=1069547178]
+z_index = 9
+position = Vector2(-167.15, 83)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("21_mx56c")
+
+[node name="Label7" type="Label" parent="Explainer/Buttons" unique_id=1540949871]
+z_index = 8
+offset_left = -147.0
+offset_top = -62.0
+offset_right = -70.0
+offset_bottom = -25.0
+text = "↑ High Block
+"
+label_settings = ExtResource("17_8kqmw")
