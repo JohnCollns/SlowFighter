@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b622k1x4adn5t"
-path="res://.godot/imported/BlockUpBlue.png-9bf92956930ad5b2d306522288f0188d.ctex"
+uid="uid://2ssg7ykeivkq"
+path="res://.godot/imported/BlueAttackedJab.png-9a9d255e672f198483a3ff831d54119d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Sprites/ActionIcons/BlockUpBlue.png"
-dest_files=["res://.godot/imported/BlockUpBlue.png-9bf92956930ad5b2d306522288f0188d.ctex"]
+source_file="res://Content/Sprites/ActionIcons/BlueAttackedJab.png"
+dest_files=["res://.godot/imported/BlueAttackedJab.png-9a9d255e672f198483a3ff831d54119d.ctex"]
 
 [params]
 

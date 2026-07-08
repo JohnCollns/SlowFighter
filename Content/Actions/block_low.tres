@@ -2,12 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://b5r25e4s3jo5c" path="res://Content/Sprites/RedManPoses/BlockLow.png" id="1_lsxys"]
 [ext_resource type="Script" uid="uid://x5j0krf3nvx4" path="res://src/Actions/ActionBlock.cs" id="2_lsxys"]
+[ext_resource type="Texture2D" uid="uid://cwiop8nbvn03u" path="res://Content/Sprites/ActionIcons/BlueBlockDown.png" id="2_v0ib7"]
+[ext_resource type="Texture2D" uid="uid://bsnecu5xp6ja2" path="res://Content/Sprites/ActionIcons/BlueBase.png" id="3_vldu7"]
+[ext_resource type="Texture2D" uid="uid://b0ih2qxff4svt" path="res://Content/Sprites/ActionIcons/RedBlockDown.png" id="4_wo3cw"]
+[ext_resource type="Texture2D" uid="uid://dc8sab7katp5j" path="res://Content/Sprites/ActionIcons/RedBase.png" id="5_6gq4s"]
 
 [resource]
 script = ExtResource("2_lsxys")
 HealOnSuccess = 10.0
 ActionName = "Block Low"
 ActionType = 1
+BlueBlockingLayer = ExtResource("2_v0ib7")
+BlueFaceLayer = ExtResource("3_vldu7")
+RedBlockingLayer = ExtResource("4_wo3cw")
+RedFaceLayer = ExtResource("5_6gq4s")
 AnimationSprite = ExtResource("1_lsxys")
 ActionCounters = PackedStringArray("Low Kick", "Jab")
 metadata/_custom_type_script = "uid://c0np48somnu43"

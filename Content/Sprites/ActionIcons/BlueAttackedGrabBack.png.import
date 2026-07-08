@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvcdelqbiycl4"
-path="res://.godot/imported/OverheadBlue.png-79ab3a16b89a8a4dff1a8f09853f1022.ctex"
+uid="uid://bvebjumtkpr3n"
+path="res://.godot/imported/BlueAttackedGrabBack.png-995965ba4c3f114b359ec29f41391c8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Sprites/ActionIcons/OverheadBlue.png"
-dest_files=["res://.godot/imported/OverheadBlue.png-79ab3a16b89a8a4dff1a8f09853f1022.ctex"]
+source_file="res://Content/Sprites/ActionIcons/BlueAttackedGrabBack.png"
+dest_files=["res://.godot/imported/BlueAttackedGrabBack.png-995965ba4c3f114b359ec29f41391c8d.ctex"]
 
 [params]
 

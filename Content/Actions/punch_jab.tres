@@ -1,12 +1,20 @@
-[gd_resource type="Resource" format=3 uid="uid://dfx6okisp3oh5"]
+[gd_resource type="Resource" script_class="ActionAttack" format=3 uid="uid://dfx6okisp3oh5"]
 
 [ext_resource type="Texture2D" uid="uid://3fnq2f6nl0e7" path="res://Content/Sprites/RedManPoses/Jab.png" id="1_xt20e"]
+[ext_resource type="Texture2D" uid="uid://2ssg7ykeivkq" path="res://Content/Sprites/ActionIcons/BlueAttackedJab.png" id="2_fenjs"]
 [ext_resource type="Script" uid="uid://n1ebolkpxc7q" path="res://src/Actions/ActionAttack.cs" id="2_xt20e"]
+[ext_resource type="Texture2D" uid="uid://bsnecu5xp6ja2" path="res://Content/Sprites/ActionIcons/BlueBase.png" id="3_lv6bu"]
+[ext_resource type="Texture2D" uid="uid://1krdf64qgtye" path="res://Content/Sprites/ActionIcons/RedAttackedJab.png" id="4_nxchk"]
+[ext_resource type="Texture2D" uid="uid://dc8sab7katp5j" path="res://Content/Sprites/ActionIcons/RedBase.png" id="5_cyi0s"]
 
 [resource]
 script = ExtResource("2_xt20e")
 ActionName = "Jab"
 ActionType = 2
+BlueAttackedTopLayer = ExtResource("2_fenjs")
+BlueFaceLayer = ExtResource("3_lv6bu")
+RedAttackedTopLayer = ExtResource("4_nxchk")
+RedFaceLayer = ExtResource("5_cyi0s")
 AnimationSprite = ExtResource("1_xt20e")
 ActionCounters = PackedStringArray("Overhead", "Low Kick", "Grab", "Stand")
 DamageOnCounter = 5.0

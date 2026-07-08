@@ -1,12 +1,20 @@
-[gd_resource type="Resource" format=3 uid="uid://dn288104dnw46"]
+[gd_resource type="Resource" script_class="ActionAttack" format=3 uid="uid://dn288104dnw46"]
 
 [ext_resource type="Texture2D" uid="uid://bxqd3b7htay54" path="res://Content/Sprites/RedManPoses/Overhead.png" id="1_hhs8o"]
 [ext_resource type="Script" uid="uid://n1ebolkpxc7q" path="res://src/Actions/ActionAttack.cs" id="2_hhs8o"]
+[ext_resource type="Texture2D" uid="uid://dpoaxcn1xq8ap" path="res://Content/Sprites/ActionIcons/BlueAttackedOverhead.png" id="2_metgt"]
+[ext_resource type="Texture2D" uid="uid://bsnecu5xp6ja2" path="res://Content/Sprites/ActionIcons/BlueBase.png" id="3_lp3wt"]
+[ext_resource type="Texture2D" uid="uid://bt3agbk3okdr7" path="res://Content/Sprites/ActionIcons/RedAttackedOverhead.png" id="4_6t7fu"]
+[ext_resource type="Texture2D" uid="uid://dc8sab7katp5j" path="res://Content/Sprites/ActionIcons/RedBase.png" id="5_sdog0"]
 
 [resource]
 script = ExtResource("2_hhs8o")
 ActionName = "Overhead"
 ActionType = 3
+BlueAttackedTopLayer = ExtResource("2_metgt")
+BlueFaceLayer = ExtResource("3_lp3wt")
+RedAttackedTopLayer = ExtResource("4_6t7fu")
+RedFaceLayer = ExtResource("5_sdog0")
 AnimationSprite = ExtResource("1_hhs8o")
 ActionCounters = PackedStringArray("Block Low", "Stand")
 DamageOnCounter = 15.0

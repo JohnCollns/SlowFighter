@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp8qjfek3v7kf"
-path="res://.godot/imported/JabRed.png-43948548755f4fcc98592b7641bead9b.ctex"
+uid="uid://b0ih2qxff4svt"
+path="res://.godot/imported/RedBlockDown.png-af6392f3f187257e54d0147543c282c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Sprites/ActionIcons/JabRed.png"
-dest_files=["res://.godot/imported/JabRed.png-43948548755f4fcc98592b7641bead9b.ctex"]
+source_file="res://Content/Sprites/ActionIcons/RedBlockDown.png"
+dest_files=["res://.godot/imported/RedBlockDown.png-af6392f3f187257e54d0147543c282c9.ctex"]
 
 [params]
 

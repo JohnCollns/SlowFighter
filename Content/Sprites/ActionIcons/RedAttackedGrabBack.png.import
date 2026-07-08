@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djjhjcts4r33x"
-path="res://.godot/imported/BlockUpRed.png-305593949c019ab4506147766ec59ad5.ctex"
+uid="uid://b322dope1bxsy"
+path="res://.godot/imported/RedAttackedGrabBack.png-fbb720c5c325eb1fe25cc72a78bfc5bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Sprites/ActionIcons/BlockUpRed.png"
-dest_files=["res://.godot/imported/BlockUpRed.png-305593949c019ab4506147766ec59ad5.ctex"]
+source_file="res://Content/Sprites/ActionIcons/RedAttackedGrabBack.png"
+dest_files=["res://.godot/imported/RedAttackedGrabBack.png-fbb720c5c325eb1fe25cc72a78bfc5bf.ctex"]
 
 [params]
 

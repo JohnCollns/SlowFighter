@@ -1,13 +1,21 @@
 [gd_resource type="Resource" format=3 uid="uid://c0d3cgkx6hdcw"]
 
 [ext_resource type="Texture2D" uid="uid://bc44iyu87pvlh" path="res://Content/Sprites/RedManPoses/BlockHigh.png" id="1_dk80q"]
+[ext_resource type="Texture2D" uid="uid://47yqv8riqoby" path="res://Content/Sprites/ActionIcons/BlueBlockUp.png" id="2_8sxii"]
 [ext_resource type="Script" uid="uid://x5j0krf3nvx4" path="res://src/Actions/ActionBlock.cs" id="2_dk80q"]
+[ext_resource type="Texture2D" uid="uid://bsnecu5xp6ja2" path="res://Content/Sprites/ActionIcons/BlueBase.png" id="3_ewxnv"]
+[ext_resource type="Texture2D" uid="uid://blmuob2uwxxl0" path="res://Content/Sprites/ActionIcons/RedBlockUp.png" id="4_l8a3g"]
+[ext_resource type="Texture2D" uid="uid://dc8sab7katp5j" path="res://Content/Sprites/ActionIcons/RedBase.png" id="5_gyrgu"]
 
 [resource]
 script = ExtResource("2_dk80q")
 HealOnSuccess = 10.0
 ActionName = "Block High"
 ActionType = 1
+BlueBlockingLayer = ExtResource("2_8sxii")
+BlueFaceLayer = ExtResource("3_ewxnv")
+RedBlockingLayer = ExtResource("4_l8a3g")
+RedFaceLayer = ExtResource("5_gyrgu")
 AnimationSprite = ExtResource("1_dk80q")
 ActionCounters = PackedStringArray("Overhead", "Jab")
 metadata/_custom_type_script = "uid://c0np48somnu43"

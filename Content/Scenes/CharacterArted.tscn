@@ -26,3 +26,22 @@ offset_top = -111.0
 offset_right = -137.0
 offset_bottom = -88.0
 text = "100"
+
+[node name="IconSprite" type="Node2D" parent="." unique_id=373839279]
+position = Vector2(-31.999989, -105)
+scale = Vector2(0.2, 0.2)
+
+[node name="Blocking" type="Sprite2D" parent="IconSprite" unique_id=1843455179]
+z_index = 10
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="AttackFront" type="Sprite2D" parent="IconSprite" unique_id=1069326285]
+z_index = 9
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Face" type="Sprite2D" parent="IconSprite" unique_id=1185388888]
+z_index = 8
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="AttackBack" type="Sprite2D" parent="IconSprite" unique_id=1215758585]
+z_index = 7
