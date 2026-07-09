@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1krdf64qgtye"
-path="res://.godot/imported/RedAttackedJab.png-ba22102fa0aa72b393c316f1d034d3d1.ctex"
+uid="uid://b322dope1bxsy"
+path="res://.godot/imported/RedGrabBack.png-93750648f92c22f243c0442cb9f7118a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Sprites/ActionIcons/RedAttackedJab.png"
-dest_files=["res://.godot/imported/RedAttackedJab.png-ba22102fa0aa72b393c316f1d034d3d1.ctex"]
+source_file="res://Content/Sprites/ActionIcons/RedGrabBack.png"
+dest_files=["res://.godot/imported/RedGrabBack.png-93750648f92c22f243c0442cb9f7118a.ctex"]
 
 [params]
 

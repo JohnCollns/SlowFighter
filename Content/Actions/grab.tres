@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://b5wsry8rxi80d" path="res://Content/Sprites/RedManPoses/GrabBack.png" id="1_llrtt"]
 [ext_resource type="Texture2D" uid="uid://bsnecu5xp6ja2" path="res://Content/Sprites/ActionIcons/BlueBase.png" id="2_fuepj"]
-[ext_resource type="Texture2D" uid="uid://bvebjumtkpr3n" path="res://Content/Sprites/ActionIcons/BlueAttackedGrabBack.png" id="2_vhltg"]
+[ext_resource type="Texture2D" uid="uid://bvebjumtkpr3n" path="res://Content/Sprites/ActionIcons/BlueGrabBack.png" id="2_vhltg"]
 [ext_resource type="Texture2D" uid="uid://dg270dikhu4mm" path="res://Content/Sprites/RedManPoses/GrabFront.png" id="2_wvhwd"]
 [ext_resource type="Script" uid="uid://cs35tcwyb0ggh" path="res://src/Actions/ActionAttackGrab.cs" id="3_fuepj"]
-[ext_resource type="Texture2D" uid="uid://b34hap5w3mo" path="res://Content/Sprites/ActionIcons/BlueAttackedGrabFront.png" id="3_yfwx4"]
-[ext_resource type="Texture2D" uid="uid://b322dope1bxsy" path="res://Content/Sprites/ActionIcons/RedAttackedGrabBack.png" id="6_ebxyk"]
-[ext_resource type="Texture2D" uid="uid://b0nwg1hnloe3j" path="res://Content/Sprites/ActionIcons/RedAttackedGrabFront.png" id="7_o3ryw"]
+[ext_resource type="Texture2D" uid="uid://b34hap5w3mo" path="res://Content/Sprites/ActionIcons/BlueGrabFront.png" id="3_yfwx4"]
+[ext_resource type="Texture2D" uid="uid://b322dope1bxsy" path="res://Content/Sprites/ActionIcons/RedGrabBack.png" id="6_ebxyk"]
+[ext_resource type="Texture2D" uid="uid://b0nwg1hnloe3j" path="res://Content/Sprites/ActionIcons/RedGrabFront.png" id="7_o3ryw"]
 [ext_resource type="Texture2D" uid="uid://dc8sab7katp5j" path="res://Content/Sprites/ActionIcons/RedBase.png" id="8_605bk"]
 
 [resource]

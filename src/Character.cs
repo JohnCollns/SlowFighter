@@ -27,7 +27,7 @@ public partial class Character : Node2D
 		IconSprite = GetNode<Node2D>("IconSprite");
 		SpriteNode.FlipH = !bFacingLeft;
 		SpriteNode.Position = new Vector2(SpriteNode.Position.X * (bFacingLeft ? 1f : -1f), SpriteNode.Position.Y);
-		IconSprite.Position = new Vector2(IconSprite.Position.X * (bFacingLeft ? 1f : -1f), IconSprite.Position.Y);
+		IconSprite.Position = new Vector2(IconSprite.Position.X + 4 - (bFacingLeft ? 0f : 8f), IconSprite.Position.Y);
 		ForegroundSpriteNode = GetNode<Sprite2D>("ForegroundSpriteNode");
 		ForegroundSpriteNode.FlipH = !bFacingLeft;
 		ForegroundSpriteNode.Position = SpriteNode.Position;

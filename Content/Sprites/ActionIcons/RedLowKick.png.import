@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cncymfgcwtk04"
-path="res://.godot/imported/BlueAttackedLowKick.png-4936d1626de0020a0620adbb71dffae3.ctex"
+uid="uid://dru5mbxhn2krw"
+path="res://.godot/imported/RedLowKick.png-8fd20d56ad4bd7ee5a1326bf501f4f5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Sprites/ActionIcons/BlueAttackedLowKick.png"
-dest_files=["res://.godot/imported/BlueAttackedLowKick.png-4936d1626de0020a0620adbb71dffae3.ctex"]
+source_file="res://Content/Sprites/ActionIcons/RedLowKick.png"
+dest_files=["res://.godot/imported/RedLowKick.png-8fd20d56ad4bd7ee5a1326bf501f4f5f.ctex"]
 
 [params]
 

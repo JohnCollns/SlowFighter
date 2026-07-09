@@ -51,6 +51,7 @@ FullColour = Color(0, 1, 0, 1)
 EmptyColour = Color(1, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="InputTimer" unique_id=1767230847]
+z_index = 200
 offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 40.0

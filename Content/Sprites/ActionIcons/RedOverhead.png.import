@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ssg7ykeivkq"
-path="res://.godot/imported/BlueAttackedJab.png-9a9d255e672f198483a3ff831d54119d.ctex"
+uid="uid://bt3agbk3okdr7"
+path="res://.godot/imported/RedOverhead.png-a176daa245506a343a6608d6fce894ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Sprites/ActionIcons/BlueAttackedJab.png"
-dest_files=["res://.godot/imported/BlueAttackedJab.png-9a9d255e672f198483a3ff831d54119d.ctex"]
+source_file="res://Content/Sprites/ActionIcons/RedOverhead.png"
+dest_files=["res://.godot/imported/RedOverhead.png-a176daa245506a343a6608d6fce894ae.ctex"]
 
 [params]
 
